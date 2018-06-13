@@ -28,12 +28,28 @@ Meet *file-tracker*. With file-tracker you can:
 Print file names and file hashes of current directory to STDOUT:
 `dotnet run -- index`
 
-Print file names and file hashes of current directory + subfolders to STDOUT:
+Print file names and file hashes of current directory + subdirectories to STDOUT:
 `dotnet run -- index -r`
 
 Print file names and file hashes of current directory to file. Appends the
-information if the file exists.
+information if the file exists:
 `dotnet run -- index -o /path/to/output.txt`
 
-Print file names and file hashes of /my/directory to STDOUT.
+Print file names and file hashes of /my/directory to STDOUT:
 `dotnet run -- index -p /my/directory`
+
+### Clean files examples
+
+This assumes you have an index file already located at `/my/index.txt`.
+
+Perform a dry run of the current directory:
+`dotnet run -- clean -i /my/index.txt -d`
+
+Perform a clean of the current directory:
+`dotnet run -- clean -i /my/index.txt`
+
+Perform a clean of the current directory, including subdirectories:
+`dotnet run -- clean -i /my/index.txt -r`
+
+Perform a clean of directory /my/directory:
+`dotnet run -- clean -i /my/index.txt -p /my/directory`
