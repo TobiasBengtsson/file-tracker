@@ -18,15 +18,22 @@ Meet *file-tracker*. With file-tracker you can:
 1) Index all your files  from your target storage solution into a simple text
    file containing the file names and hashes.
 2) Using the file from 1), you can automatically delete any duplicates in any
-   other folder on your computer or hard drive. If you want, you can also just
+   other directory on your computer or hard drive. If you want, you can also just
    list the duplicates to take manual action later.
 
 ## Usage
 
-### Index files
+### Index files examples
 
-Print file names and file hashes to STDOUT 
-`file-tracker index /path/to/dir`
+Print file names and file hashes of current directory to STDOUT:
+`dotnet run -- index`
 
-Print file names and file hashes to file
-`file-tracker index /path/to/dir -o -path/to/output/file`
+Print file names and file hashes of current directory + subfolders to STDOUT:
+`dotnet run -- index -r`
+
+Print file names and file hashes of current directory to file. Appends the
+information if the file exists.
+`dotnet run -- index -o /path/to/output.txt`
+
+Print file names and file hashes of /my/directory to STDOUT.
+`dotnet run -- index -p /my/directory`
